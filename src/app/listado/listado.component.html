@@ -1,0 +1,15 @@
+<div id="card">
+    <mat-spinner class="spinner" *ngIf="!ready"></mat-spinner>
+    <mat-list *ngIf="ready">
+        <div class="galeria" *ngFor="let pokemon of datos">
+            <img src="{{pokemon.sprites.front_default}}" alt="">
+            <label><strong>Nombre: {{pokemon.name}} - Altura: {{pokemon.height}} - Peso: {{pokemon.weight}}</strong></label>
+            <button mat-stroked-button color="primary" (click)="info(pokemon)">Detalle</button>
+            <button mat-stroked-button color="primary" (click)="move(pokemon)">Movimientos</button><br>
+        </div>
+    </mat-list>
+    <mat-paginator [length]="1050"
+              [pageSize]="20"
+            (page)="pageNext($event)">  
+    </mat-paginator>
+</div>

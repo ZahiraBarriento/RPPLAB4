@@ -1,0 +1,12 @@
+<div id="card">
+    <mat-spinner class="spinner" *ngIf="!ready"></mat-spinner>
+    <mat-card *ngIf="ready">
+        <mat-card-title>
+            Name: {{datos.name}}
+            <div *ngFor="let data of moves">
+                Moves: {{data.name}}<br>
+                Level: {{data.level_learned_at}}
+            </div>
+        </mat-card-title>
+    </mat-card>
+</div>

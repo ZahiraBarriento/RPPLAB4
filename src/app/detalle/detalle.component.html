@@ -1,0 +1,27 @@
+<div id="card">
+    <mat-spinner class="spinner" *ngIf="!ready"></mat-spinner>
+    <mat-card *ngIf="ready">
+        <mat-card-title>
+            {{datos.name}}
+        </mat-card-title>
+        <div class="galeria">
+            <img src="{{datos.sprites.front_default}}" alt="">
+            <img src="{{datos.sprites.back_default}}" alt="">
+            <img src="{{datos.sprites.front_shiny}}" alt="">
+            <img src="{{datos.sprites.back_shiny}}" alt="">
+        </div>
+        <mat-card-title>
+            <label style="font-weight: 500;">Order: {{datos.order}}</label>
+        </mat-card-title>
+        <br>
+        <mat-card-title>
+            Abilities
+        </mat-card-title>
+            <div *ngFor="let ab of abilities">
+                <label style="font-weight: bolder;">{{ab.name}}</label>
+                <p>{{ab.effect_entries[1].effect}}</p>
+                <label style="font-weight: 500;">Generation</label>
+                <p>{{ab.generation.name}}</p>
+            </div>
+    </mat-card>
+</div>
